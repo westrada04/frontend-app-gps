@@ -1,0 +1,41 @@
+<ion-view view-title="Registrar Usuario">
+
+    <ion-content>
+
+        <div class="img-center">
+            <img class="registro" src="img/user.png" alt="logo">
+        </div>
+
+        <form name="registro" novalidate>
+            <div class="list">
+
+                <label class="item item-input item-stacked-label">
+                  <span class="input-label">Nombre</span>
+                  <input type="text" name="nombre" placeholder="Wilmer Estrada" ng-model="vm.usuario.name">
+                  
+                  <span class="msg-error" ng-show="!registro.$pristine && registro.nombre.$error.required ">El nombre es requerido</span>
+                </label>
+
+                <label class="item item-input item-stacked-label">
+                  <span class="input-label">Email</span>
+                  <input type="email" name="email" placeholder="usuario@usuario.com" ng-model="vm.usuario.email">
+                  
+                  <span class="msg-error" ng-show="!registro.$pristine && registro.email.$error.required ">El email es requerido</span>
+                  <span class="msg-error" ng-show="!registro.$pristine && registro.email.$error.email ">Ingrese una direccion de Email Valida</span>
+                </label>
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Contraseña</span>
+                    <input type="password" name="password" placeholder="*******" ng-model="vm.usuario.password">
+                    
+                    <span class="msg-error" ng-show="!registro.$pristine && registro.password.$error.required ">La contraseña es requerida</span>
+                </label>
+
+                <label class="item">
+                    <button class="button button-block button-positive" ng-click="vm.registrar()">Ingresar</button>
+                </label>
+            </div>
+        </form>
+    </ion-content>
+
+</ion-view>

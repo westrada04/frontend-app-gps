@@ -1,0 +1,32 @@
+<ion-view hide-nav-bar="false" view-title="Iniciar Sesion">
+            
+    <ion-content>
+        <div class="img-center">
+            <img class="logo" src="img/logoMapa.jpg" alt="logo">
+        </div>
+        
+        <form name="login" novalidate>
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                  <span class="input-label">Email</span>
+                  <input type="email" name="email" placeholder="usuario@usuario.com" ng-model="vm.usuario.email" required>
+                  
+                  <span class="msg-error" ng-show="!login.$pristine && login.email.$error.required ">El email es requerido</span>
+                  <span class="msg-error" ng-show="!login.$pristine && login.email.$error.email ">Ingrese una direccion de Email Valida</span>
+                </label>
+    
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Contraseña</span>
+                    <input type="password" name="password" placeholder="*******" ng-model="vm.usuario.password">
+                    
+                    <span class="msg-error" ng-show="!login.$pristine && login.password.$error.required ">La contraseña es requerida</span>
+                </label>
+
+                <label class="item">
+                    <button class="button button-block button-positive"  ng-disabled="!login.$valid" ng-click="vm.login()">Ingresar</button>
+                </label>
+            </div>
+        </form>
+    </ion-content>
+
+</ion-view>

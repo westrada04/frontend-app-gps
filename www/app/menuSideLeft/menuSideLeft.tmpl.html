@@ -1,0 +1,23 @@
+<ion-view>
+
+    <ion-content>
+        <ion-list>
+            <ion-item menu-close href="#/app/login">
+                Login
+            </ion-item>
+            <ion-item menu-close href="#/app/registro">
+                Registro
+            </ion-item>
+            <ion-item ng-if="vm.auth" menu-close href="#/app/map">
+                Mapa
+            </ion-item>
+            <ion-item ng-if="vm.auth" menu-close href="#/app/usuarios">
+                Usuarios
+            </ion-item>
+            <ion-item ng-if="vm.auth" menu-close ng-click="vm.logout()">
+                Cerrar Session
+            </ion-item>
+        </ion-list>
+    </ion-content>
+
+</ion-view>
